@@ -100,7 +100,7 @@ class BaseComponent(six.with_metaclass(DeclarativeFieldsMetaclass, Component)):
 @register_schema_for(widgets.TextInput)
 class TextComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent)):
     type = Literal('input')
-    values = Attr('inputType', 'text')
+    inputType = Attr('inputType', 'text')
 
 @register_schema_for(widgets.Textarea)
 class TextAreaComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent)):
@@ -135,3 +135,7 @@ class SelectComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseCompone
 @register_schema_for(widgets.DateInput)
 class DateComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent)):
     type = Literal('pikaday')
+
+@register_schema_for(widgets.DateTimeInput)
+class DateTimeComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent)):
+    type = Literal('dateTimePicker')
