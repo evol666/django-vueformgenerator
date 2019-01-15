@@ -139,3 +139,8 @@ class DateComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent
 @register_schema_for(widgets.DateTimeInput)
 class DateTimeComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent)):
     type = Literal('dateTimePicker')
+	
+@register_schema_for(widgets.NumberInput)
+class NumberComponent(six.with_metaclass(DeclarativeFieldsMetaclass, BaseComponent)):
+    type = Literal('input')
+    inputType = Attr('inputType', 'number')
